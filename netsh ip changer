@@ -1,0 +1,72 @@
+CLS
+@ECHO OFF
+
+SET IP_SET_1=Static 192.168.200.100 255.255.255.0
+SET IP_SET_2=Static 192.168.200.200 255.255.255.0
+SET IP_SET_3=Static 0.0.0.0 255.255.255.0
+SET IP_SET_DHCP=DHCP
+
+:MAIN_MENU
+TITLE Network IP Address Changer
+CLS
+
+ECHO.
+ECHO Windows Network IP Changer
+ECHO - you need to right click on this batch file,
+ECHO - and select "Run as Administrator"
+ECHO - Key in your password
+ECHO.
+ECHO 1) %IP_SET_1%
+ECHO 2) %IP_SET_2%
+ECHO 3) %IP_SET_3%
+ECHO 9) %IP_SET_DHCP%
+ECHO M) Key in manually
+ECHO 0) Exit
+ECHO .
+CHOICE /C 1239M0 /N /M "Option: "
+
+IF %ERRORLEVEL% == 1 goto :OPTION_1
+IF %ERRORLEVEL% == 2 goto :OPTION_2
+IF %ERRORLEVEL% == 3 goto :OPTION_3
+IF %ERRORLEVEL% == 4 goto :OPTION_9
+IF %ERRORLEVEL% == 5 goto :OPTION_M
+IF %ERRORLEVEL% == 6 goto :OPTION_0
+
+
+
+:OPTION_1
+ECHO Setting up IP to %IP_SET_1%
+netsh int ip set address "local area connection" %IP_SET_1%
+PAUSE
+goto :MAIN_MENU
+
+:OPTION_2
+ECHO Setting up IP to %IP_SET_2%
+netsh int ip set address "local area connection" %IP_SET_2%
+PAUSE
+goto :MAIN_MENU
+
+:OPTION_3
+ECHO Setting up IP to %IP_SET_3%
+netsh int ip set address "local area connection" %IP_SET_3%
+PAUSE
+goto :MAIN_MENU
+
+:OPTION_9
+ECHO Setting up IP to %IP_SET_DHCP%
+netsh int ip set address "local area connection" %IP_SET_DHCP%
+PAUSE
+goto :MAIN_MENU
+
+:OPTION_M
+SET /P IP_SET_MANUAL=Key in your IP in this format 0.0.0.0:
+netsh int ip set address "local area connection" Static %IP_SET_MANUAL% 255.255.255.0
+PAUSE
+goto :MAIN_MENU
+
+:OPTION_0
+ECHO.
+ECHO Script End:
+PAUSE
+goto :EOF
+:EOF
