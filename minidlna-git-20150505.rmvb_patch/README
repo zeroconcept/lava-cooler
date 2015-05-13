@@ -1,0 +1,3 @@
+to apply the patches
+
+patch filename < patch.patch
