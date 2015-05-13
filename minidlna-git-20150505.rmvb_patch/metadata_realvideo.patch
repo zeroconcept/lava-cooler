@@ -1,0 +1,20 @@
+--- ../minidlna-git.modified/metadata.c	2015-05-05 08:33:43.894678248 +0800
++++ metadata.c	2015-05-05 08:44:54.951028986 +0800
+@@ -846,6 +846,8 @@
+ 			xasprintf(&m.mime, "video/x-matroska");
+ 		else if( strcmp(ctx->iformat->name, "flv") == 0 )
+ 			xasprintf(&m.mime, "video/x-flv");
++                else if( strcmp(ctx->iformat->name, "rm") == 0 )
++                        xasprintf(&m.mime, "video/x-pn-realvideo");
+ 		if( m.mime )
+ 			goto video_no_dlna;
+ 
+@@ -1523,6 +1525,8 @@
+ 			xasprintf(&m.mime, "video/x-matroska");
+ 		else if( strcmp(ctx->iformat->name, "flv") == 0 )
+ 			xasprintf(&m.mime, "video/x-flv");
++                else if( strcmp(ctx->iformat->name, "rm") == 0 )
++                        xasprintf(&m.mime, "video/x-pn-realvideo");
+ 		else
+ 			DPRINTF(E_WARN, L_METADATA, "%s: Unhandled format: %s\n", path, ctx->iformat->name);
+ 	}

@@ -1,0 +1,21 @@
+--- utils.c	2015-05-05 08:28:12.702570475 +0800
++++ ../minidlna-1.1.4_rmvb_patches/utils.c	2014-08-31 11:05:48.772707135 +0800
+@@ -349,6 +349,10 @@
+ 				return "mkv";
+ 			else if( strcmp(mime+6, "x-flv") == 0 )
+ 				return "flv";
++                        else if( strcmp(mime+6, "x-pn-realvideo") == 0 )
++                                return "rmvb";
++                        else if( strcmp(mime+6, "x-pn-realvideo") == 0 )
++                                return "rm";
+ 			else if( strcmp(mime+6, "vnd.dlna.mpeg-tts") == 0 )
+ 				return "mpg";
+ 			else if( strcmp(mime+6, "quicktime") == 0 )
+@@ -381,6 +385,7 @@
+ 		ends_with(file, ".m2t") || ends_with(file, ".mkv")   ||
+ 		ends_with(file, ".vob") || ends_with(file, ".ts")    ||
+ 		ends_with(file, ".flv") || ends_with(file, ".xvid")  ||
++                ends_with(file, ".rm") || ends_with(file, ".rmvb")  ||
+ #ifdef TIVO_SUPPORT
+ 		ends_with(file, ".TiVo") ||
+ #endif

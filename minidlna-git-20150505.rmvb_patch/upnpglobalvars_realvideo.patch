@@ -1,0 +1,19 @@
+--- ../minidlna-git.modified/upnpglobalvars.h	2015-05-05 08:48:32.123111226 +0800
++++ upnpglobalvars.h	2015-05-05 09:44:08.519251691 +0800
+@@ -57,7 +57,7 @@
+ 
+ #include <sqlite3.h>
+ 
+-#define MINIDLNA_VERSION "1.1.4"
++#define MINIDLNA_VERSION "1.1.4 RealVideo"
+ 
+ #ifdef NETGEAR
+ # define SERVER_NAME "ReadyDLNA"
+@@ -164,6 +164,7 @@
+ 	"http-get:*:video/x-ms-wmv:*," \
+ 	"http-get:*:video/x-msvideo:*," \
+ 	"http-get:*:video/x-flv:*," \
++        "http-get:*:video/x-pn-realvideo:*," \
+ 	"http-get:*:video/x-tivo-mpeg:*," \
+ 	"http-get:*:video/quicktime:*," \
+ 	"http-get:*:audio/mp4:*," \
