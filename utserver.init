@@ -14,12 +14,13 @@
 #
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="uTorrent-server daemon"
+DESC="µTorrent server daemon"
 NAME=utserver
 DAEMON=/usr/sbin/$NAME
 SETTINGSPATH=/opt/utorrent-server
 PIDFILE=/var/run/$NAME.pid
-DAEMON_ARGS="-settingspath $SETTINGSPATH -pidfile $PIDFILE -daemon"
+LOGFILE=/var/log/$NAME.log
+DAEMON_ARGS="-settingspath $SETTINGSPATH -pidfile $PIDFILE -logfile $LOGFILE -daemon"
 SCRIPTNAME=/etc/init.d/$NAME
 
 # Exit if the package is not installed
