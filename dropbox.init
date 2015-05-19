@@ -1,0 +1,17 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          dropbox.spawn
+# Required-Start:    $syslog $time $remote_fs
+# Required-Stop:     $syslog $time $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Descriptior: Dropbox Multiple Spawn
+# Description:       Dropbox Multiple Spawn
+#
+### END INIT INFO
+#
+# Author:       Paulim <paulim.lianheng@gmail.com>
+
+/home/dropbox/dropbox-multispawner.sh
+
+exit 0
