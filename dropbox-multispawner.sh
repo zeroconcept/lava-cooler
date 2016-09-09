@@ -3,7 +3,7 @@
 VERBOSE=true
 
 current_HOME=$HOME
-dropboxes=".dropbox-paulim .dropbox-lichin .dropbox-mummy"
+dropboxes=".dropbox-user1 .dropbox-user2 .dropbox-user3"
 for dropbox in $dropboxes
 do
     HOME="/home/dropbox"
